@@ -3,26 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <title>Assignments 1</title>
+    <style>
+      .chart-frame {
+        width: 100%;
+        height: 760px;   /* try 760-820 depending on content */
+        border: 0;
+        overflow: hidden;
+        display: block;
+      }
+    </style>
 </head>
 <body>
-    <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 1500px;
+    <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 100%;
             padding: 30px; background: linear-gradient(135deg, #1a1a2e, #16213e);
             border-radius: 12px; color: white;">
-    <h1 style="margin-top: 0; font-size: 28px;">San Francisco's Deadly Raising Crime</h1>
+    <h1 style="margin-top: 0; font-size: 28px;">San Francisco's Deadly Drug Problem</h1>
+    <div>
     <p style="color: #b0b0c0; line-height: 1.6;">
+
         San Francisco has a positive downward going curve in crime statistics.
         In 2025, the city could report an overall 22% decline in violence crimes,
         and homicide incidents have decreased by 45%, and robbery decreased by 40% since 2019.
         Looking at the police reports listed back to 2003, the average number of police reporting
-        it has never been lower. All in all, San Francisco is part of the heartwarming of a California turn for the better.
-        So why is one crime increasing terrifyingly?
-        <iframe src="drug_offense_interactive.html" width="100%" height="600" frameborder="0"></iframe>
+        it has never been lower. San Francisco is part of a heartwarming turn for the better in California.
+        So why are we seeing one crime is increasing terrifyingly?
+
     </p>
+    <img src="crime_change_2015_2025_matplotlib.png" alt="Fig. 1 Change In Crime 2015-2025" style="max-width: 100%;">
+    </div>
+    <div>
+    <p style="color: #b0b0c0; line-height: 1.6;">
+
+        Out of six crime types reported by the San Francisco police, as seen in figure 1, only drug offense has
+        increased in the last 10 years. With an increase of more than 95% in a decade, drug offense has had a remarkable
+        change. This was not the intention after the liberation of marijuana November 8th 2016.
+
+    </p>
+    </div>
+    <div>
+
+    <p style="color: #b0b0c0; line-height: 1.6;">
+
+        In 2015 the state of California legalized marijuana by law with Proposition 64. This happened following
+        5 years of decriminalization through the Senate Bill 1449. This meant that it became legal to posses
+        28.5 grams of marijuana, or 5 grams of concentrated cannabis for adults over 21 years old. It would be
+        reasonable to expect a significant fall in the reporting of drug offenses in the city of San Francisco
+        as a result if the legalization. The numbers seem to tell a different story, unfortunately.
+
+    </p>
+
+        <iframe class="chart-frame" src="heatmap_interactive.html" scrolling="no"></iframe>
+    </div>
+
+    <div>
+    <p>
+
+        Looking at the time map, showing the reported incidents of drug offenses where marijuana was involved,
+        marked as green dots, plotted against reported drug offenses other than marijuana, shown as red dots,
+        a clear pattern show towards more report, but with less and less marijuana as the crime of report.
+
+    </p>
+
+        <iframe class="chart-frame" src="drug_offense_interactive.html" scrolling="no"></iframe>
+
+    <p>
+        While the number of marijuana related reports has declined over the last decade, something happened with
+        the harder drugs. Around 2013 a servere epidemi has overflown the state of California, known as
+        The Fentanyl epidemi. Fentanyl was invented in the 1960ties. It is a designer drug, that are up to 100 timers
+        stronger than heroin and related opiats. The highly addictive drug has quickly become very popular due to its
+        non-plant based components, that are far more cheap to produce, but with a much higher risk of causing overdoses.
+        Only
+    </p>
+    </div>
+
         <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 1500px;
             padding: 30px; background: linear-gradient(135deg, #4A8DDC, #16213e);
             border-radius: 12px; color: white;">
         <h2 style="margin-top: 0; font-size: 18px;">San Francisco Data</h2>
         <p style="color: #b0b0c0; line-height: 1.6;">
+
             The city of San Francisco delivers key information data of the city
             through the open data portal, DataSF. Here, you can find datasets with information
             about the city, including the police reports. The police reports are
@@ -38,17 +97,16 @@
             For this article, some categories of police reports were filtered out,
             because they contain no information, or contributes very vague to the understanding
             of the crime scene this article touches.
+
         </p>
-        </div>
-        <div>
-            <iframe src="heatmap_interactive.html" width="100%" height="600" frameborder="4"></iframe>
-        </div>
-    <div style="display: flex; gap: 10px; margin-top: 20px;">
-        <a href="#" style="padding: 10px 20px; background: #e94560; color: white;
-           text-decoration: none; border-radius: 6px;">Hourly patterns</a>
-        <a href="#" style="padding: 10px 20px; background: #0f3460; color: white;
+           <div style="display: flex; gap: 10px; margin-top: 20px;">
+            <a href="https://data.sfgov.org" style="padding: 10px 20px; background: #e94560; color: white;
+           text-decoration: none; border-radius: 6px;">San Franscisco Data</a>
+            <a href="#" style="padding: 10px 20px; background: #0f3460; color: white;
            text-decoration: none; border-radius: 6px;">Crime map</a>
-    </div>
+            </div>
+        </div>
+
 
 </div>
 </body>
