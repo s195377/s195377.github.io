@@ -19,8 +19,8 @@
     a:hover,
     a:active,
     a:focus {
-    text-decoration: underline;
-    color: #fff;
+    text-decoration: underline !important;
+    color: #000000 !important;
     }
   p {
     margin: 12px 0;
@@ -29,11 +29,11 @@
 </head>
 <body>
     <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 100%;
-            padding: 30px; background: linear-gradient(135deg, #1a1a2e, #16213e);
-            border-radius: 12px; color: white;">
+            padding: 30px; background: linear-gradient(135deg, #FD5A1E, #F17925);
+            border-radius: 12px; color: #000000;">
     <h1 style="margin-top: 0; font-size: 28px;">San Francisco's Deadly Drug Problem</h1>
     <div>
-    <p style="color: #b0b0c0; line-height: 1.6;max-width: 80%;">
+    <p style="color: #000000; line-height: 1.6;max-width: 80%;">
         San Francisco has a positive downward-going curve in crime statistics.
         In 2025, the city could <a href="https://data.sfgov.org" target="_blank">report</a> an overall 22% decline in violence crimes,
         and homicide incidents have decreased by 45%, and robbery decreased by 40% since 2019.
@@ -41,17 +41,17 @@
         it has never been lower. San Francisco is part of a heartwarming turn for the better in California.
         So why are we seeing one crime is increasing terrifyingly?
     </p>
-    <img src="crime_change_2015_2025_matplotlib.png" alt="Fig. 1 Change In Crime 2015-2025" style="max-width: 80%;">
+    <img src="crime_change_2015_2025_matplotlib.svg" alt="Fig. 1 Change In Crime 2015-2025" style="max-width: 80%;">
     </div>
     <div>
-    <p style="color: #b0b0c0; line-height: 1.6;max-width: 80%;">
+    <p style="color: #000000; line-height: 1.6;max-width: 80%;">
         Out of six crime types reported by the San Francisco police, as seen in figure 1, only drug offense has
         increased in the last 10 years. With an increase of more than 95% in a decade, drug offense has had a remarkable
         change. This was not the intention after the liberation of marijuana November 8th 2016.
     </p>
     </div>
     <div>
-    <p style="color: #b0b0c0; line-height: 1.6;max-width: 80%;">
+    <p style="color: #000000; line-height: 1.6;max-width: 80%;">
         In 2015 the state of California legalized marijuana by law with Adult Use of Marijuana Act (AUMA)
         <a href="https://courts.ca.gov/programs-initiatives/criminal-justice-services/proposition-64-adult-use-marijuana-act" target="_blank">Proposition 64</a>.
         This happened following 5 years of decriminalization. This meant that it
@@ -60,17 +60,18 @@
         the city of San Francisco as a result if the legalization. The numbers seem to tell a different story, unfortunately.
     </p>
         <iframe class="chart-frame frame-heatmap" src="heatmap_interactive.html" scrolling="no"></iframe>
-    <p style="color: #b0b0c0; line-height: 1.6;max-width: 80%;">
+    <p style="color: #000000; line-height: 1.6;max-width: 80%;">
         Looking at the time map, showing the reported incidents of drug offenses from 2015 to 2025, where marijuana was involved,
         marked as green dots, plotted against reported drug offenses other than marijuana in the same period, shown as red dots,
         there is a clear pattern with less and less marijuana.
     </p>
+        <!--    -->
         <iframe class="chart-frame frame-plotly" src="drug_offense_interactive.html" scrolling="no"></iframe>
-    <p style="color: #b0b0c0; line-height: 1.6;max-width: 80%;">
+    <p style="color: #000000; line-height: 1.6;max-width: 80%;">
         While the number of marijuana related reports has declined over the last decade, something happened with
         the harder drugs. Around 2013 a servere epidemi has overflown the state of California, known as
         <a href="https://www.sciencedirect.com/science/article/abs/pii/S0955395921003078" target="_blank">The Fentanyl epidemi</a>.
-        Fentanyl is a designer drug that was invented in the 1960ties. It is up to 50 times or
+        Fentanyl is a designer drug that was invented in the 1960s. It is up to 50 times or
         more potent than morphine and related plant-based opioids. The addictive drug has quickly become very popular due to it being
         produced entirely in laboratories with out plant based components, like most opioids.
         This means that fentanyl is cheap to produce, but with a much higher risk as even very small doses can cause
@@ -84,7 +85,7 @@
         padding: 30px; background: linear-gradient(135deg, #4A8DDC, #16213e);
         border-radius: 12px; color: white;">
     <h2 style="margin-top: 0; font-size: 18px;">San Francisco Data</h2>
-    <p style="color: #b0b0c0; line-height: 1.6;max-width: 80%;">
+    <p style="color: #000000; line-height: 1.6;max-width: 80%;">
         The city of San Francisco delivers key information data of the city
         through the open data portal, DataSF. Here, you can find datasets with information
         about the city, including the police reports. The police reports are
