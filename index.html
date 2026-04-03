@@ -12,146 +12,189 @@
     margin: 12px 0 18px 0;
   }
 
-  .frame-heatmap { height: 760px; }  /* keep larger */
-  .frame-plotly  { height: 635px; }  /* reduce gap under last chart */
-    a,
-    a:visited,
-    a:hover,
-    a:active,
-    a:focus {
+  .frame-heatmap { height: 760px; }
+  .frame-plotly  { height: 635px; }
+
+  a,
+  a:visited,
+  a:hover,
+  a:active,
+  a:focus {
     text-decoration: underline !important;
     color: #000000 !important;
-    }
+  }
+
   p {
     margin: 12px 0;
+  }
+
+  /* Facts box: floats right, text wraps on the left — takes no vertical space */
+  .facts-box {
+    float: right;
+    width: 28%;
+    min-width: 200px;
+    margin: 0 0 20px 24px;   /* gap between box and text on its left */
+    padding: 16px 20px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ede9d5, #c8a96e);
+    color: #000000;
+    border: 2px solid #8B7355;
+    box-sizing: border-box;
+    font-size: 0.92em;
+    line-height: 1.6;
+  }
+
+  /* Links inside facts box */
+  .facts-box a,
+  .facts-box a:visited,
+  .facts-box a:hover,
+  .facts-box a:active,
+  .facts-box a:focus {
+    color: #000000 !important;
+    text-decoration: underline !important;
+  }
+
+  /* Clear float at the end of every section so nothing bleeds out */
+  .section::after {
+    content: '';
+    display: table;
+    clear: both;
   }
 </style>
 </head>
 <body>
-    <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 100%;
-            padding: 30px; background: linear-gradient(135deg, #FD5A1E, #F17925);
-            border-radius: 12px; color: #000000;">
-    <h1 style="margin-top: 0; font-size: 28px;">San Francisco's Deadly Drug Problem</h1>
-    <div>
-    <p style="color: #000000; line-height: 1.6;max-width: 80%;">
-        San Francisco is part of a heartwarming turn for the better in California.
-        It has a positive downward-going curve in crime statistics. In 2025, the city could
-        <a href="https://www.gov.ca.gov/2025/10/15/crime-is-down-in-san-francisco-key-law-enforcement-partnerships-yield-successful-results/"
-           target="_blank">report</a>
-        an overall 22% decline in violence crimes. Homicide incidents have decreased by 45%,
-        and robbery decreased by 40% since 2019. Looking at police reports that are available back to 2003,
-        the average number of police reporting has never been lower.
-        So why are we seeing police reports on drug offense is increasing terrifyingly?
+<div class="article-page" style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 100%;
+        padding: 30px; background: linear-gradient(135deg, #D8D7BF, #C5B07B);
+        border-radius: 12px; color: #000000;">
+
+  <h1 style="margin-top: 0; font-size: 28px;">San Francisco's Deadly Drug Problem</h1>
+
+    <div style="margin-top: 20px; margin-bottom: 28px; padding: 24px 30px;
+     background: linear-gradient(135deg, #D8D7BF, #C5B07B);
+     border-radius: 12px; border: 2px solid #2a5da8; color: #000000;">
+  <h2 style="margin-top: 0; font-size: 18px; color: #000000;">San Francisco Data</h2>
+  <p style="color: #000000; line-height: 1.6; max-width: 80%;">
+    The city of San Francisco delivers key information data of the city
+through the open data portal, DataSF. Here, you can find datasets with information
+about the city, including the police reports. The police reports are
+collected in two datasets called: 'Police Department Incident Reports:
+Historical 2003 to May 2018', and 'Police Department Incident Reports:
+2018 to Present'. In combination they shows every reported
+crime since 1st of January 2003 and all the way up to present date.
+The two crime datasets are not aligned with each other, but contain many
+of the same information, however, some names and crimes are reported differently.
+Therefore, they cannot be directly be compared until they have been cleaned and
+harmonized. The harmonization means that some crime categories has to be merged and
+some has to be renamed to capture the essence of the crimes scenes they represent.
+For this article, we have used a prioritized focus crime dataset, constructed from the SF Data.
+However, some categories of the police reports were filtered out,
+because they contain no information, or contributes very vague to the understanding
+of the crime scene this article touches.
+In prioritized focus crime dataset we included 6 police reported incident types; motor vehicle theft, assault, larceny theft, burglary, drug offense, prostitution. For each reported incidents, we have used the GPS longitude and latitude data. Lastly, we have used a selection of years, namely 2015 to 2025.
+<br><br>
+    San Francisco Data can be found
+    <a href="https://data.sfgov.org" target="_blank" style="color:#000000 !important;">here</a>.
+  </p>
+</div>
+  <div class="section">
+    <p style="color: #000000; line-height: 1.6; max-width: 80%;">
+      San Francisco is part of a heartwarming turn for the better in California.
+      It has a positive downward-going curve in crime statistics. In 2025, the city could
+      <a href="https://www.gov.ca.gov/2025/10/15/crime-is-down-in-san-francisco-key-law-enforcement-partnerships-yield-successful-results/"
+         target="_blank">report</a>
+      an overall 22% decline in violence crimes. Homicide incidents have decreased by 45%,
+      and robbery decreased by 40% since 2019. Looking at police reports that are available back to 2003,
+      the average number of police reporting has never been lower.
+      So why are we seeing police reports on drug offense is increasing terrifyingly?
     </p>
+  </div>
+
+  <div class="section">
     <img src="crime_change_2015_2025_matplotlib.svg" alt="Fig. 1 Change In Crime 2015-2025" style="max-width: 80%;">
-    </div>
-    <div>
-    <p style="color: #000000; line-height: 1.6;max-width: 80%;">
-        The six crime types, that this article centre on, it is seen in figure 1 the only drug offense has an
-        increased number of reporting in the last 10 years. However, the difference is clear. With an increase of more than 95% in a decade, drug offense
-        has had a alarming jump in the statistics. This was not an expected increase following the legalization of marijuana.
-        Early <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6827842/" target="_blank">studies</a> even showed a positive effect
-        from the legalization on the use of hard drugs. Something else must be going on.
+  </div>
+
+  <div class="section">
+    <p style="color: #000000; line-height: 1.6; max-width: 80%;">
+      The six crime types, that this article centre on, it is seen in figure 1 the only drug offense has an
+      increased number of reporting in the last 10 years. However, the difference is clear. With an increase of more than 95% in a decade, drug offense
+      has had an alarming jump in the statistics. This was not an expected increase following the legalization of marijuana.
+      Early <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6827842/" target="_blank">studies</a> even showed a positive effect
+      from the legalization on the use of hard drugs. Something else must be going on.
     </p>
-    </div>
-    <div>
-    <p style="color: #000000; line-height: 1.6;max-width: 80%;">
-        In 2015 the state of California legalized marijuana
-        <a href="https://courts.ca.gov/programs-initiatives/criminal-justice-services/proposition-64-adult-use-marijuana-act" target="_blank">Proposition 64</a>
-        after 5 years of decriminalization. The thoughts was it would be reasonable to expect a significant fall in the reporting of drug offenses in
-        the city of San Francisco as a result if the legalization. The <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9543368/" target="_blank">
-        research</a> of positive effect, including the criminal record, seemed to be evident. But, the numbers are telling a different story, unfortunately.
-        If the increase in numbers of reported drug offenses is a consequence of the legalization is, however, an ongoing debate and ground for
-        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6934162/" target="_blank">research</a>.
+  </div>
 
-        <!-- Fact Box Start -->
+  <!-- Marijuana fact box placed BEFORE its neighbouring paragraph so text wraps beside it -->
+  <div class="section">
+    <aside class="facts-box">
+      <strong>Proposition 64</strong><br><br>
+      On November 8th 2016, California legalized marijuana with the Adult Use of Marijuana Act (AUMA),
+      also known as Proposition 64.
+      This meant that it became legal to possess up to 28.5 grams of marijuana,
+      or up to 5 grams of concentrated cannabis for adults over 21 years old.
+    </aside>
 
-        On November 8th 2015, California legalized Marijuana with the Adult Use of Marijuana Act (AUMA),
-        also known as proposition 64.
-        This meant that it became legal to possess up to 28.5 grams of marijuana,
-        or up to 5 grams of concentrated cannabis for adults over
-        21 years old.
-
-        <!-- Fact Box End -->
-
+    <p style="color: #000000; line-height: 1.6; max-width: 80%;">
+      In 2016 the state of California legalized marijuana with
+      <a href="https://courts.ca.gov/programs-initiatives/criminal-justice-services/proposition-64-adult-use-marijuana-act" target="_blank">Proposition 64</a>
+      after 5 years of decriminalization. It would be reasonable to expect a significant fall in the reporting of drug offenses in
+      the city of San Francisco as a result of the legalization. The <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9543368/" target="_blank">
+      research</a> of positive effect, including the criminal record, seemed to be evident. But, the numbers are telling a different story, unfortunately.
+      If the increase in numbers of reported drug offenses is a consequence of the legalization is, however, an ongoing debate and ground for
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6934162/" target="_blank">research</a>.
     </p>
-        <iframe class="chart-frame frame-heatmap" src="heatmap_interactive.html" scrolling="no"></iframe>
-    <p style="color: #000000; line-height: 1.6;max-width: 80%;">
-        In the time map above, the green dots represents the reported incidents of drug offenses in the periode from 2015 to 2025. The dots
-        are placed on the GPS coordinates where a drug offense where marijuana was involved.
-        The map also show red dots that represents the GPS coordinates where the reported drug offenses were other than marijuana offenses.
-        Running the timemap a clear pattern shows with less and less drug offenses where marijuana was involved.
-        However, it is clear that there is an increase in the reported drug offences
-        where other drugs are involved. Furthermore, it looks like a lot of the drug related activity concentrated more
-        distinctly around fewer areas of the city.
+  </div>
 
+  <div class="section">
+    <iframe class="chart-frame frame-heatmap" src="heatmap_interactive.html" scrolling="no"></iframe>
+  </div>
+
+  <div class="section">
+    <p style="color: #000000; line-height: 1.6; max-width: 80%;">
+      In the time map above, the green dots represents the reported incidents of drug offenses in the period from 2015 to 2025 where marijuana was involved.
+      The map also shows red dots that represent the GPS coordinates where the reported drug offenses were other than marijuana offenses.
+      Running the timemap a clear pattern shows with less and less drug offenses where marijuana was involved.
+      However, it is clear that there is an increase in the reported drug offences
+      where other drugs are involved. Furthermore, it looks like a lot of the drug related activity concentrated more
+      distinctly around fewer areas of the city.
     </p>
+  </div>
 
-    <p>
-        In figure 2 below, we take a closer look at how the reported drug offenses changed over the decade.
+  <div class="section">
+    <p style="color: #000000; line-height: 1.6; max-width: 80%;">
+      In figure 2 below, we take a closer look at how the reported drug offenses changed over the decade.
     </p>
-        <iframe class="chart-frame frame-plotly" src="drug_offense_interactive.html" scrolling="no"></iframe>
-    <p style="color: #000000; line-height: 1.6;max-width: 80%;">
-        While the number of marijuana related reports declined over the last decade, something different happened
-        with harder drugs. Around 2013 a severe epidemy has overflown the state of California, known as
-        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0955395921003078" target="_blank">The Fentanyl epidemy</a>.
-        Fentanyl is cheap to produce, but with a much higher risk to the users, as even a very small doses of 2 mg
-        is considered a lethal dose.
+  </div>
 
-        A legalization of fentanyl will, probably, not have the same positive effect on police reports
-        as it was seen with marijuana. However, something has to be done to the raising problem, and
-        <a href="https://www.sfchronicle.com/projects/san-francisco-drug-overdose-deaths/" target="_blank">many</a> are concerned
-        on behalf of the city.
+  <div class="section">
+    <iframe class="chart-frame frame-plotly" src="drug_offense_interactive.html" scrolling="no"></iframe>
+  </div>
 
+  <!-- Fentanyl fact box placed BEFORE its neighbouring paragraph -->
+  <div class="section">
+    <aside class="facts-box">
+      <strong>Fentanyl facts</strong><br><br>
+      Fentanyl is a designer drug invented in the 1960s.
+      It is up to 100 times more potent than morphine and related plant-based opioids.
+      Fentanyl is produced entirely in laboratories without plant-based components.
+      1 kilo of Fentanyl can kill 500,000 people.<br><br>
+      <a href="https://www.dea.gov/resources/facts-about-fentanyl" target="_blank">DEA — Facts about Fentanyl</a>
+    </aside>
 
-        <!-- Fact Box Start -->
-
-        Fentanyl is a designer drug that was invented in the 1960s.
-        The addictive drug has become very popular since 2013.
-        It is up to 100 times or more potent than morphine and related plant-based opioids.
-        Fentanyl is produced entirely in laboratories with out plant based components.
-        1 kilo of Fentanyl can kill 500.000 people.
-        <a href="https://www.dea.gov/resources/facts-about-fentanyl" target="_blank">link to DEA</a>
-
-        <!-- Fact Box End -->
-
-
+    <p style="color: #000000; line-height: 1.6; max-width: 80%;">
+      While the number of marijuana related reports declined over the last decade, something different happened
+      with harder drugs. Around 2013 a severe epidemic has overflown the state of California, known as
+      <a href="https://www.sciencedirect.com/science/article/abs/pii/S0955395921003078" target="_blank">The Fentanyl epidemic</a>.
+      The addictive drug has become very popular since 2013.
+      Fentanyl is cheap to produce, but with a much higher risk to the users, as even a very small dose of 2 mg
+      is considered a lethal dose.
+      A legalization of fentanyl will, probably, not have the same positive effect on police reports
+      as it was seen with marijuana. However, something has to be done to the raising problem, and
+      <a href="https://www.sfchronicle.com/projects/san-francisco-drug-overdose-deaths/" target="_blank">many</a> are concerned
+      on behalf of the city.
     </p>
-    </div>
-
-    <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 80%;
-        padding: 30px; background: linear-gradient(135deg, #4A8DDC, #16213e);
-        border-radius: 12px; color: white;">
-    <h2 style="margin-top: 0; font-size: 18px;">San Francisco Data</h2>
-    <p style="color: #000000; line-height: 1.6;max-width: 80%;">
+  </div>
 
 
-        <!-- Fact Box Start -->
-
-        The city of San Francisco delivers key information data of the city
-        through the open data portal, DataSF. Here, you can find datasets with information
-        about the city, including the police reports. The police reports are
-        collected in two datasets called: 'Police Department Incident Reports:
-        Historical 2003 to May 2018', and 'Police Department Incident Reports:
-        2018 to Present'. In combination they shows every reported
-        crime since 1st of January 2003 and all the way up to present date.
-        The two crime datasets are not aligned with each other, but contain many
-        of the same information, however, some names and crimes are reported differently.
-        Therefore, they cannot be directly be compared until they have been cleaned and
-        harmonized. The harmonization means that some crime categories has to be merged and
-        some has to be renamed to capture the essence of the crimes scenes they represent.
-        For this article, we have used a prioritized focus crime dataset, constructed from the SF Data.
-        However, some categories of the police reports were filtered out,
-        because they contain no information, or contributes very vague to the understanding
-        of the crime scene this article touches.
-
-        San Francisco Data can be found <a href="https://data.sfgov.org" target="_blank">here</a>
-
-        <!-- Fact Box End -->
-
-
-    </p>
-    </div>
 
 </div>
 </body>
