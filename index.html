@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -35,8 +35,7 @@
     padding: 24px;
   }
 
-  .fact-box,
-  .fact-box * {
+  .fact-box p {
     color: #d1d5db !important;
   }
 
@@ -75,18 +74,31 @@
     color: #d1d5db !important;
   }
 
-    a,
-    a:visited,
-    a:active,
-    a:focus {
+  /* Global link styling - centralized */
+  a,
+  a:visited,
+  a:active,
+  a:focus {
     text-decoration: underline !important;
     color: #fbbf24 !important;
-    }
+  }
 
-    a:hover {
+  a:hover {
     text-decoration: underline !important;
     color: #fde68a !important;
-    }
+  }
+
+  /* Ensure links are visible even inside containers with color declarations */
+  .page-wrapper a,
+  .page-wrapper a:visited,
+  .page-wrapper a:active,
+  .page-wrapper a:focus {
+    color: #fbbf24 !important;
+  }
+
+  .page-wrapper a:hover {
+    color: #fde68a !important;
+  }
   p {
     margin: 12px 0;
   }
@@ -109,31 +121,36 @@
         San Francisco's Deadly Drug Problem
     </h1>
     <div class="fact-box" style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 100%;">
-    <h2 style="margin-top: 0; font-size: 18px;">San Francisco Data</h2>
-    <p style="color: #000000; line-height: 1.6;">
+    <h2 style="margin-top: 0; font-size: 18px; font-weight:bold;" class="pb-5">Where the data comes from</h2>
+    <p style=" line-height: 1.6;">
         The city of San Francisco delivers key information data of the city
-        through the open data portal, DataSF. Here, you can find datasets with information
-        about the city, including the police reports. The police reports are
+        through the open data portal, <a href="https://data.sfgov.org" target="_blank">DataSF</a>. Here, you can find datasets with information
+        about the city, including the police reports. <br>
+        The police reports included in this story, are
         collected in two datasets called: 'Police Department Incident Reports:
         Historical 2003 to May 2018', and 'Police Department Incident Reports:
-        2018 to Present'. In combination they shows every reported
+        2018 to Present'. In combination, they show every reported
         crime since 1st of January 2003 and all the way up to present date.
-        The two crime datasets are not aligned with each other, but contain many
-        of the same information, however, some names and crimes are reported differently.
+        The two crime datasets are not aligned with each other, but contain a lot of overlapping information, however, some names and crimes are reported differently.
         Therefore, they cannot be directly be compared until they have been cleaned and
         harmonized. The harmonization means that some crime categories has to be merged and
         some has to be renamed to capture the essence of the crimes scenes they represent.
-        For this article, we have used a prioritized focus crime dataset, constructed from the SF Data.
-        However, some categories of the police reports were filtered out,
-        because they contain no information, or contributes very vague to the understanding
-        of the crime scene this article touches.
+        For this article, we have used a prioritized focus crime dataset, constructed from the <a href="https://data.sfgov.org" target="_blank">SF Data</a>.
+        Important context:
+        <ul>
+            <li>Some categories of the police reports have been filtered out,because they contain no information, or contributes very vague to the understanding
+        of the crime scene this article touches.</li>
+            <li>Categories and subcategories have been normalized as to allow a common enterpretatoin</li>
+            <li>Some context is not visible in the data: i.e. Details/context for the specific incident</li>
+    </ul>
+
 
         San Francisco Data can be found <a href="https://data.sfgov.org" target="_blank">here</a>
 
     </p>
     </div>
     <div class="px-6">
-        <p style="color: #000000; line-height: 1.6;max-width: 100%;">
+        <p style=" line-height: 1.6;max-width: 100%;">
             San Francisco is part of a heartwarming turn for the better in California.
             It has a positive downward-going curve in crime statistics. In 2025, the city could
             <a href="https://www.gov.ca.gov/2025/10/15/crime-is-down-in-san-francisco-key-law-enforcement-partnerships-yield-successful-results/"
@@ -177,11 +194,11 @@
         </p>
     </div>
     <div id="heatmap-gate" class="chart-gate">
-        <button type="button" class="chart-gate-overlay rounded-lg" aria-controls="heatmap-frame">Klik for at aktivere scroll-zoom</button>
+        <button type="button" class="chart-gate-overlay rounded-lg" aria-controls="heatmap-frame">Click to activate scroll-zoom</button>
         <iframe id="heatmap-frame" class="chart-frame frame-heatmap rounded-lg" src="heatmap_interactive.html" scrolling="no"></iframe>
     </div>
     <div class="px-6">
-        <p style="color: #000000; line-height: 1.6;max-width: 100%;">
+        <p style=" line-height: 1.6;max-width: 100%;">
             In the time map above, the green dots represents the reported incidents of drug offenses in the periode from 2015 to 2025. The dots
             are placed on the GPS coordinates where a drug offense where marijuana was involved.
             The map also show red dots that represents the GPS coordinates where the reported drug offenses were other than marijuana offenses.
@@ -199,7 +216,7 @@
     </p>
     </div>
         <iframe class="chart-frame frame-plotly rounded-lg" src="drug_offense_interactive.html" scrolling="no"></iframe>
-    <p style="color: #000000; line-height: 1.6;max-width: 100%;">
+    <p style=" line-height: 1.6;max-width: 100%;">
         While the number of marijuana related reports declined over the last decade, something different happened
         with harder drugs. Around 2013 a severe epidemy has overflown the state of California, known as
         <a href="https://www.sciencedirect.com/science/article/abs/pii/S0955395921003078" target="_blank">The Fentanyl epidemy</a>.
