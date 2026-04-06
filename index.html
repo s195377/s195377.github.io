@@ -28,6 +28,17 @@
   .frame-heatmap { height: 760px; }  /* keep larger */
   .frame-plotly  { height: 635px; }  /* reduce gap under last chart */
 
+  .plot-block {
+    margin: 8px 0 18px 0;
+  }
+
+  .plot-caption {
+    margin-top: 8px;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    color: #d1d5db; /* adjust to your theme */
+  }
+
   .fact-box {
     border: 1px solid #fbbf24;
     background: rgba(254, 243, 199, 0.05);
@@ -126,7 +137,7 @@
 </style>
 </head>
 <body class="text-gray-300">
-    <div class="page-wrapper flex flex-col gap-8" style="color: #000000;">
+    <div class="page-wrapper flex flex-col gap-8" style="color: #d1d5db;">
     <h1 style="margin-top: 0; font-size: 28px;">
         <i class="fa-solid fa-city"></i>
         San Francisco's Deadly Drug Problem
@@ -164,7 +175,18 @@ The full San Francisco Data can be found
             So why are we seeing police reports on drug offense is increasing terrifyingly?
         </p>
     </div>
-    <img src="crime_change_2015_2025_matplotlib.svg" alt="Fig. 1 Change In Crime 2015-2025" style="max-width: 100%;" class="rounded-lg">
+    <figure class="plot-block">
+  <img src="crime_change_2015_2025_matplotlib.svg"
+       alt="Fig. 1 Change In Crime 2015-2025"
+       style="max-width: 100%;"
+       class="rounded-lg">
+  <figcaption class="plot-caption">
+    Figure 1.
+    Percent change in incident counts from 2015 to 2025 across selected crime categories.
+    The green color indicates a decrease in number of reported incidents in percentages, whereas the
+    red color indicates an increase in number of reported incidents in percentages.
+  </figcaption>
+</figure>
 
     <div>
         <p class="px-6">
@@ -196,29 +218,58 @@ The full San Francisco Data can be found
             21 years old.
         </p>
     </div>
-    <div id="heatmap-gate" class="chart-gate">
-        <button type="button" class="chart-gate-overlay rounded-lg" aria-controls="heatmap-frame">Click to activate scroll-zoom</button>
-        <iframe id="heatmap-frame" class="chart-frame frame-heatmap rounded-lg" src="heatmap_interactive.html" scrolling="no"></iframe>
-    </div>
+    <figure class="plot-block">
+        <div id="heatmap-gate" class="chart-gate">
+            <button type="button" class="chart-gate-overlay rounded-lg" aria-controls="heatmap-frame">
+              Click to activate scroll-zoom
+            </button>
+            <iframe id="heatmap-frame"
+                    class="chart-frame frame-heatmap rounded-lg"
+                    src="heatmap_interactive.html"
+                    scrolling="no"></iframe>
+        </div>
+        <figcaption class="plot-caption">
+            Figure 2.
+            Time-based map of drug offense incident locations (2015-2025). The green color indicates marijuana-related incidents.
+            The red color indicates other drug offenses. Try zoom and adjust the "fps"-button to get a better overview
+            of the trends in drug-related crimes in San Francisco districts.
+        </figcaption>
+    </figure>
     <div class="px-6">
         <p style=" line-height: 1.6;max-width: 100%;">
-        In the time map above, the green dots represents the reported incidents of drug offenses in the period from 2015 to 2025 where marijuana was involved.
+        In the time map in figure 2 above, the green dots represents the reported incidents of drug offenses in the period from 2015 to 2025 where marijuana was involved.
         The map also shows red dots that represent the GPS coordinates where the reported drug offenses were other than marijuana offenses.
         Running the timemap a clear pattern shows with less and less drug offenses where marijuana was involved.
         However, it is clear that there is an increase in the reported drug offences
         where other drugs are involved. Furthermore, it looks like a lot of the drug related activity concentrated more
         distinctly around fewer areas of the city.
 
-
         </p>
     </div>
 
     <div class="px-6">
     <p>
-        In figure 2 below, it is seen how the reported drug offenses changed over the last decade. The plot contain three visualizations for easy comparison. It contain a line graph that is showing the total number reported drug offense incidents and a line graph that shows the number of reports where marijuana is involved. The third graph show the changed in reported drug offense year by year.
+        In figure 3 below, it is seen how the reported drug offenses changed over the last decade.
+        The plot contain three visualizations for easy comparison. It contain a line graph that is
+        showing the total number reported drug offense incidents and a line graph that shows the number
+        of reports where marijuana is involved. The third graph show the changed in reported drug offense year by year.
     </p>
     </div>
-        <iframe class="chart-frame frame-plotly rounded-lg" src="drug_offense_interactive.html" scrolling="no"></iframe>
+    <figure class="plot-block">
+      <iframe class="chart-frame frame-plotly rounded-lg"
+              src="drug_offense_interactive.html"
+              scrolling="no"></iframe>
+      <figcaption class="plot-caption">
+        Figure 3.
+          Change in drug offences trends (2015-2025).
+          The blue line in "Incident view" show the trend in the total drug offence incidents.
+          In "Marijuana rate view" the green line shows the trend in drug offense incidents where marijuana was reported.
+          The "Evolution view" Show the overall trend in drug offense incidents in percentages compared to the year before,
+          where red indicates an increasing trend in incidents and green indicates a decreasing trend.
+
+          Hover the plot for more statistics.
+      </figcaption>
+    </figure>
     <p style=" line-height: 1.6;max-width: 100%;">
         While the number of marijuana related reports declined over the last decade, something different happened
         with harder drugs. Around 2013 a severe designer drug epidemic has overflown the state of California, known as
