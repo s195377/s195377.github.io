@@ -25,8 +25,8 @@
     font-family: 'Helvetica Neue', Arial, sans-serif;
   }
 
-  .frame-heatmap { height: 760px; clip-path: inset(0 round 0.5rem); }
-  .frame-plotly  { height: 700px; clip-path: inset(0 round 0.5rem); }
+  .frame-heatmap { height: 760px; }
+  .frame-plotly  { height: 700px; }
 
   .plot-block {
     margin: 8px 0 18px 0;
@@ -265,9 +265,11 @@ The full San Francisco Data can be found
     </p>
     </div>
     <figure class="plot-block">
-      <iframe class="chart-frame frame-plotly rounded-lg"
-              src="drug_offense_interactive.html"
-              scrolling="no"></iframe>
+      <div class="chart-gate is-active">
+        <iframe class="chart-frame frame-plotly rounded-lg"
+                src="drug_offense_interactive.html"
+                scrolling="no"></iframe>
+      </div>
       <figcaption class="plot-caption">
         Figure 3.
           Change in drug offences trends (2015-2025).
