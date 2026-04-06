@@ -142,6 +142,7 @@
         <i class="fa-solid fa-city"></i>
         San Francisco's Deadly Drug Problem
     </h1>
+    <p style="font-style: italic; margin-top: -8px;">by Morten Deurell, Niels Christian Grønlykke og Andreas Holm-Hansen</p>
     <div class="fact-box" style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 100%;">
     <h2 style="margin-top: 0; font-size: 18px; font-weight:bold;" class="pb-5">Where the data comes from</h2>
     <p style=" line-height: 1.6;">
@@ -156,6 +157,8 @@ The two crime datasets are not aligned with each other, but contain much
 of the same information, however, some names and crimes are reported differently.
 Therefore, they cannot be compared unless they are cleaned and
 harmonized. For this article, we have harmonized a prioritized focus crime dataset, constructed from the <a href="https://data.sfgov.org/browse?Department-Metrics_Publishing-Department=Police+Department&sortBy=relevance&page=1&pageSize=20" target="_blank">Police Department</a> found on the DataSF. This means that some variables have been merged and renamed to capture the essence of the crime scenes they represent in the original datasets. However, some data were filtered afterwards because they contain no information, or contribute very vaguely to the understanding of the story this article is telling, i.e., only prioritized details are visualized.
+    </p>
+    <p style=" line-height: 1.6;">
 In our prioritized focus crime dataset we included five harmonized variables; incident_category, filtered to contain only 6 reported categories; motor vehicle theft, assault, larceny theft, burglary, drug offense, prostitution. The incident_description variable was used to filter for the word marijuana. Two GPS variables, longitude and latitude, were used to locate drug offence incidents on a map. Lastly, a timestamp variable was used to filter a selection of years, namely 2015 to 2025.
 The full San Francisco Data can be found
  <a href="https://data.sfgov.org" target="_blank">here</a>
@@ -280,8 +283,12 @@ The full San Francisco Data can be found
         <a href="https://www.dea.gov/resources/facts-about-fentanyl" target="_blank">More about Fentanyl</a>
     </p>
     </div>
+    <h3 style="font-size: 1rem; font-weight: bold; color: #fbbf24; margin-bottom: 4px;">It is important to note: more reports does not necessarily mean more crime</h3>
     <p style="line-height:1.6;">
-        The drug offense incidents increased by approximately 196%, from 1,849 to 3,614, in only 10 years.
+        When interpreting crime statistics, it is essential to distinguish between what the data <em>shows</em> and what it <em>does not show</em>. As Richardson et al. highlight in their research on <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3333423" target="_blank">data-driven policing</a>, police reports primarily reflect enforcement activity — where officers patrol, what they prioritize, and which policies are in effect — rather than providing a direct measure of actual criminal behavior. An increase in reported drug offenses could therefore indicate a genuine rise in drug-related crime, a shift in policing strategy, or both. This distinction is critical when evaluating the trends shown in the figures above and should be kept in mind throughout the remainder of this article.
+    </p>
+    <p style="line-height:1.6;">
+        The drug offense incidents increased by approximately 95.46%, from 1,849 to 3,614, in only 10 years.
         While the number of marijuana related reports declined from 23.3% to 0.86% over the last decade, something different must have happened
         with harder drugs. It is seen that the evolution in incidents shows a percentage decrease in the years 2019, 2020, and 2021.
         Taking the COVID-19 pandemic into consideration, this drop is assumed to be a reasonable percentage-wise decline for that period.
@@ -289,12 +296,17 @@ The full San Francisco Data can be found
         <a href="https://www.sciencedirect.com/science/article/abs/pii/S0955395921003078" target="_blank">the fentanyl epidemic</a>.
         Fentanyl is cheap to produce, but with a much higher risk of an accidental overdose to the users, as even a very small dose of 2 mg
         is considered a lethal dose.
-
+    </p>
+    <p style="line-height:1.6;">
         A legalization of fentanyl will, probably, not have the same positive effect on police reports
         as it was seen with marijuana. However, something has to be done about the rising problem, and
         <a href="https://www.sfchronicle.com/projects/san-francisco-drug-overdose-deaths/" target="_blank">many</a> are concerned
         on behalf of the city. The epidemic had by 2025 cost the lives of 3000 people in San Francisco in one decade, but overdose-related deaths are reported to be declining. One of Mayor Daniels Lurie's current <a href="https://sfstandard.com/2026/02/05/san-francisco-fentanyl-decade/" target="_blank">strategies</a> to continue a decline in overdose deaths is widespread arrests for drug possession. The increase in arrests produces more police reports and this might be the foundation for the increase in drug offenses that was found in the prioritized focus crime dataset, used for this article. The true effect of the strategies and healing of San Francisco, we will have to wait for.
     </p>
+
+    <h2 style="font-size: 1.2rem; font-weight: bold; margin-top: 16px;">Contributions</h2>
+    <p>Everyone contributed equally. The assignment has been completed by Morten Deurell (s206073), Niels Christian Grønlykke (s195377) and Andreas Holm-Hansen (s215000). We are group A2 25. </p>
+    <p>Preparation of the dataset, creation of the focus crime dataset, data analysis, and plots were done using the principles and theoretical learnings from the weekly classes, namely weeks 2, 5, and 7. Large language models were used for coding of plots and computational analysis of data, as well as for correct English grammar.</p>
 
 </div>
 <script>
