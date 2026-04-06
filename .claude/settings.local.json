@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -o '\"paper_bgcolor\":[^,}]*\\\\|\"plot_bgcolor\":[^,}]*\\\\|\"font\":{[^}]*}\\\\|\"gridcolor\":[^,}]*' \"C:\\\\Users\\\\aholm\\\\s195377.github.io\\\\drug_offense_interactive.html\")",
+      "Bash(grep -oE '\"\\(color|fillcolor\\)\":\"[^\"]{3,20}\"' \"C:\\\\Users\\\\aholm\\\\s195377.github.io\\\\drug_offense_interactive.html\")",
+      "Bash(python3:*)"
+    ]
+  }
+}
